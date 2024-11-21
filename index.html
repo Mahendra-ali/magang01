@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            /* Mengubah latar belakang menjadi lebih cerah */
+        }
+
+        header {
+            background: url('img/headerImage.webp') no-repeat center center;
+            background-size: cover;
+            color: #ffffff;
+            padding: 40px 0;
+            /* Menambah padding untuk header */
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* Menambahkan bayangan pada header */
+        }
+
+        nav {
+            margin: 20px 0;
+            font-size: 18px;
+            /* Menambah ukuran font pada navigasi */
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+            /* Menambahkan transisi transform */
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+            transform: scale(1.1);
+            /* Efek pembesaran saat hover */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 40px 0;
+            /* Menambah padding pada container */
+        }
+
+        section {
+            margin: 60px 0;
+            /* Menambah jarak antar section */
+        }
+
+        #about {
+            padding: 20px;
+            background-color: #f9f9f9;
+            /* Opsional */
+        }
+
+        #about h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            /* Meratakan vertikal */
+            gap: 20px;
+            /* Jarak antara teks dan gambar */
+        }
+
+        .about-content p,
+        .about-content img {
+            flex: 1 1 50%;
+            /* Membagi 50% ruang untuk teks dan gambar */
+        }
+
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .about-content img {
+            width: 100%;
+            /* Pastikan gambar memenuhi 50% */
+            height: auto;
+            /* Proporsi asli gambar */
+            border-radius: 10px;
+            /* Opsional: sudut membulat */
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #1abc9c;
+            display: inline-block;
+            padding-bottom: 10px;
+            font-size: 28px;
+            /* Menambah ukuran font pada judul */
+            margin-bottom: 20px;
+            /* Menambah jarak bawah pada judul */
+        }
+
+        .portfolio-item {
+            background: #ffffff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            /* Membuat sudut lebih bulat */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            /* Mengubah bayangan untuk efek yang lebih halus */
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            /* Menambahkan transisi background */
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            /* Meningkatkan efek terangkat saat hover */
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+            background-color: #f9f9f9;
+            /* Mengubah warna latar belakang saat hover */
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            /* Menambah jarak antar item portfolio */
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            /* Menambah padding footer */
+            background: #2c3e50;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 16px;
+            /* Menambah ukuran font footer */
+        }
+
+        footer a {
+            color: #1abc9c;
+            /* Mengubah warna link di footer */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+            /* Mengubah warna saat hover */
+        }
+
+
+
+        #contact h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #contact p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            /* Membungkus jika ruang tidak cukup */
+            justify-content: center;
+            /* Pusatkan elemen */
+            gap: 20px;
+            /* Jarak antar item */
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            /* Rata vertikal */
+            gap: 10px;
+            /* Jarak antara ikon dan teks */
+            background: #fff;
+            /* Warna latar item */
+            padding: 10px 15px;
+            border-radius: 8px;
+            /* Sudut membulat */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Bayangan lembut */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            /* Efek melayang */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            /* Bayangan lebih tegas */
+        }
+
+        .contact-item img {
+            width: 30px;
+            /* Ukuran ikon */
+            height: 30px;
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: #007BFF;
+            /* Warna teks */
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+            /* Efek hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- <img src="img/headerImage.webp" alt="Deskripsi Gambar" /> -->
+        <h1>Portofolio Saya</h1>
+        <nav>
+            <a href="#about">Tentang Saya</a>
+            <a href="#projects">Proyek</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>Tentang Saya</h2>
+            <div class="about-content">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum earum debitis tempore optio architecto
+                    nesciunt itaque repellendus sequi minima, accusantium ea illum aliquid! A, harum.</p>
+                <img src="img/profile.png" alt="Tentang Saya">
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Proyek</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h3>Proyek 1</h3>
+                    <img src="img/gambar1.jpeg" alt="Deskripsi Gambar Proyek 2"
+                        style="width: 100%; border-radius: 5px;" />
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo eligendi ullam eaque sunt
+                        reprehenderit et beatae quaerat aperiam provident rerum iure expedita tempora commodi
+                        praesentium est cumque molestias facilis voluptatum quam qui sit, error obcaecati corporis
+                        voluptatibus. Earum, perferendis suscipit magni, veritatis odit eveniet porro soluta ea fugit
+                        ratione sunt dolorum assumenda aspernatur accusantium dicta corrupti temporibus ipsum tempora
+                        officia saepe quidem pariatur cupiditate exercitationem! Quis perspiciatis, nobis veniam quo,
+                        quos et ut, ipsum dignissimos quae aliquam nostrum in molestias officiis cum saepe. Excepturi
+                        neque suscipit voluptatem eveniet. Odit sapiente ratione vitae asperiores minus ad soluta cum.
+                        Exercitationem, in alias.</p>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Proyek 2</h3>
+                    <img src="img/gambar2.jpeg" alt="Deskripsi Gambar Proyek 2"
+                        style="width: 100%; border-radius: 5px;" />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem tenetur et temporibus? Ex
+                        eveniet facere quasi iusto officiis neque ullam fugiat a corporis atque assumenda doloribus
+                        magni impedit officia ratione quos recusandae, voluptates cum sed tempora vero, dicta molestiae?
+                        Enim, repellat esse. Tempora porro sint quidem repudiandae molestias consequuntur eaque esse
+                        autem rem! Culpa blanditiis qui autem asperiores quaerat saepe placeat, assumenda molestias,
+                        fugiat eaque repudiandae totam? Cupiditate maxime atque fuga officia veritatis modi distinctio!
+                    </p>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Proyek 3</h3>
+                    <img src="img/gambar3.jpeg" alt="Deskripsi Gambar Proyek 2"
+                        style="width: 100%; border-radius: 5px;" />
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil autem, dolores est molestias aut
+                        repellat! Vero reiciendis maiores nulla? Assumenda ipsum harum cupiditate odio maiores mollitia
+                        natus possimus, ipsa, animi qui distinctio est fuga enim vero perspiciatis? Eaque nemo nisi,
+                        fugiat, modi commodi amet dignissimos a aliquam excepturi corrupti temporibus.</p>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Proyek 4</h3>
+                    <img src="img/gambar4.jpeg" alt="Deskripsi Gambar Proyek 2"
+                        style="width: 100%; border-radius: 5px;" />
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis delectus voluptates ipsum
+                        dolores numquam, tempora, cum nesciunt perferendis nam, veritatis ratione natus aspernatur.
+                        Voluptate, quibusdam molestias ullam, rerum dolorem aliquid facere maiores, iusto nobis tempora
+                        optio laborum animi. Tenetur nesciunt ex, itaque deleniti suscipit minus nostrum exercitationem
+                        cumque sed aspernatur esse distinctio, sint laudantium dolorem ab fuga, laborum cum quo!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Kontak</h2>
+            <div class="contact-info">
+                <p>Jika Anda ingin menghubungi saya, silakan kirim ke sosial media saya : </p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <img src="img/fb.png" alt="Facebook">
+                    <a href="https://facebook.com/username" target="_blank">Facebook</a>
+                </div>
+                <div class="contact-item">
+                    <img src="img/twitter.png" alt="Twitter">
+                    <a href="https://twitter.com/username" target="_blank">Twitter</a>
+                </div>
+                <div class="contact-item">
+                    <img src="img/ig.png" alt="Instagram">
+                    <a href="https://instagram.com/username" target="_blank">Instagram</a>
+                </div>
+                <div class="contact-item">
+                    <img src="img/linkeid.png" alt="LinkedIn">
+                    <a href="https://linkedin.com/in/username" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </section>
