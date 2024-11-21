@@ -7,6 +7,7 @@
     <title>Portofolio Saya</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -36,17 +37,21 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <h3>Proyek 1</h3>
-                    <img src="img/gambar1.jpeg" alt="Deskripsi Gambar Proyek 2"
+                    <img src="img/gambar1.jpeg" alt="Deskripsi Gambar Proyek 1"
                         style="width: 100%; border-radius: 5px;" />
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo eligendi ullam eaque sunt
-                        reprehenderit et beatae quaerat aperiam provident rerum iure expedita tempora commodi
-                        praesentium est cumque molestias facilis voluptatum quam qui sit, error obcaecati corporis
-                        voluptatibus. Earum, perferendis suscipit magni, veritatis odit eveniet porro soluta ea fugit
-                        ratione sunt dolorum assumenda aspernatur accusantium dicta corrupti temporibus ipsum tempora
-                        officia saepe quidem pariatur cupiditate exercitationem! Quis perspiciatis, nobis veniam quo,
-                        quos et ut, ipsum dignissimos quae aliquam nostrum in molestias officiis cum saepe. Excepturi
-                        neque suscipit voluptatem eveniet. Odit sapiente ratione vitae asperiores minus ad soluta cum.
-                        Exercitationem, in alias.</p>
+                    <p class="project-summary">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo eligendi
+                        ullam eaque sunt reprehenderit et beatae quaerat aperiam provident rerum iure expedita tempora
+                        commodi praesentium est cumque molestias facilis voluptatum quam qui sit</p>
+                    <p class="project-full" style="display: none;">Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Nemo eligendi ullam eaque sunt reprehenderit et beatae quaerat aperiam provident rerum
+                        iure expedita tempora commodi praesentium est cumque molestias facilis voluptatum quam qui sit,
+                        error obcaecati corporis voluptatibus. Earum, perferendis suscipit magni, veritatis odit eveniet
+                        porro soluta ea fugit ratione sunt dolorum assumenda aspernatur accusantium dicta corrupti
+                        temporibus ipsum tempora officia saepe quidem pariatur cupiditate exercitationem! Quis
+                        perspiciatis, nobis veniam quo, quos et ut, ipsum dignissimos quae aliquam nostrum in molestias
+                        officiis cum saepe. Excepturi neque suscipit voluptatem eveniet. Odit sapiente ratione vitae
+                        asperiores minus ad soluta cum. Exercitationem, in alias.</p>
+                    <button class="read-more-btn">Read More</button>
                 </div>
                 <div class="portfolio-item">
                     <h3>Proyek 2</h3>
@@ -106,3 +111,23 @@
                 </div>
             </div>
         </section>
+    </div>
+    <script>
+        document.querySelectorAll('.read-more-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const fullText = this.previousElementSibling; // Ambil elemen <p> yang menyimpan teks lengkap
+                const summaryText = fullText.previousElementSibling; // Ambil elemen <p> yang menyimpan ringkasan
+
+                if (fullText.style.display === "none") {
+                    fullText.style.display = "block"; // Tampilkan teks lengkap
+                    summaryText.style.display = "none"; // Sembunyikan ringkasan
+                    this.textContent = "Read Less"; // Ubah teks tombol
+                } else {
+                    fullText.style.display = "none"; // Sembunyikan teks lengkap
+                    summaryText.style.display = "block"; // Tampilkan ringkasan
+                    this.textContent = "Read More"; // Ubah teks tombol kembali
+                }
+            });
+        });
+    </script>
+</body>

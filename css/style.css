@@ -129,6 +129,18 @@ h2 {
     gap: 30px;
     /* Menambah jarak antar item portfolio */
 }
+.read-more-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.read-more-btn:hover {
+    background-color: #0056b3;
+}
 
 footer {
     text-align: center;
